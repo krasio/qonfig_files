@@ -18,3 +18,7 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+[user]
+  name = Krasimir Angelov
+  email = krasio@codingspree.net
+
