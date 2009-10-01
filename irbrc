@@ -22,4 +22,3 @@ class Object
   end
 end
 
-set autoeval
