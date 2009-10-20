@@ -174,10 +174,15 @@ set smartcase
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" BUfers
+" Bufers
 map <C-right> <ESC>:bn<CR>
 map <C-left> <ESC>:bp<CR>
 
 " tabs
 map <M-right> <ESC>:tabnext<CR>
 map <M-left> <ESC>:tabprevious<CR>
+
+" ruby helpers
+inoremap <C-k> <%=  -%><Left><Left><Left><Left>
+inoremap <C-j> <%  -%><Left><Left><Left><Left>
+inoremap <C-l> #{}<Left>
