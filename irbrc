@@ -4,6 +4,10 @@ if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
   RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
 end
 
+require 'rubygems'
+require 'interactive_editor'
+
+
 # Autocomplete
 require 'irb/completion'
 
