@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/qrasio/.rvm/gems/ruby-1.8.7-p330@meetpips3/gems/activeadmin-0.3.2/lib/active_admin/views/pages'
+let g:netrw_dirhist_2='/home/qrasio/.rvm/gems/ruby-1.8.7-p330@meetpips3/gems/activeadmin-0.3.2'
+let g:netrw_dirhist_3='/home/qrasio/.rvm/gems/ruby-1.8.7-p330@meetpips3/gems/activeadmin-0.3.2/app'
+let g:netrw_dirhist_4='/home/qrasio/.rvm/gems/ruby-1.8.7-p330@meetpips3/gems/activeadmin-0.3.2/app/views'
+let g:netrw_dirhist_5='/home/qrasio/.rvm/gems/ruby-1.8.7-p330@meetpips3/gems/activeadmin-0.3.2/app/views/layouts'
+let g:netrw_dirhist_6='/home/qrasio/projects/meetpips3/app/views/trades/basket'
+let g:netrw_dirhist_7='/home/qrasio/projects/pip_sync/lib/pip_sync/client'
+let g:netrw_dirhist_8='/home/qrasio/projects/pip_sync/lib/pip_sync'
+let g:netrw_dirhist_9='/home/qrasio/projects/pip_sync'

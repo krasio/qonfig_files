@@ -1,0 +1,27 @@
+# ADD LOCAL CONFIGURATION HERE
+
+
+# DO NOT EDIT BELOW THIS LINE
+[push]
+    default = tracking
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = /home/qrasio/.gitignore
+[alias]
+  c = commit -m
+  a = add
+  di = diff
+  dic = diff --cached
+  pl = pull
+  ps = push
+  plre = pull --rebase
+  st = status
+  out = log origin..HEAD
+  tree = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%an%Creset' --abbrev-commit --date=relative
+[user]
+  name = Krasimir Angelov
+  email = krasio@codingspree.net
+

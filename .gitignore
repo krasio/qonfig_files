@@ -1,3 +1,5 @@
-*.swp
+.*.swp
+tags
 .swo
-vim/.netrwhist
+jferris-*.gemspec
+*.scratch.*
