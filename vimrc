@@ -150,7 +150,9 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme ir_black 
+set t_Co=256
+" colorscheme ir_black
+colorscheme jellybeans
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -179,10 +181,13 @@ map <C-right> <ESC>:bn<CR>
 map <C-left> <ESC>:bp<CR>
 
 " tabs
-map <M-right> <ESC>:tabnext<CR>
-map <M-left> <ESC>:tabprevious<CR>
+map <q-right> <ESC>:tabnext<CR>
+map <q-left> <ESC>:tabprevious<CR>
 
 " ruby helpers
 inoremap <C-k> <%=  -%><Left><Left><Left><Left>
 inoremap <C-j> <%  -%><Left><Left><Left><Left>
 inoremap <C-l> #{}<Left>
+
+" highlight rable files
+au BufRead,BufNewFile *.rabl set filetype=ruby

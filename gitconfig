@@ -2,12 +2,14 @@
 
 
 # DO NOT EDIT BELOW THIS LINE
+[push]
+  default = tracking
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [alias]
   c = commit -m
   a = add
@@ -18,6 +20,8 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+  tree = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%an%Creset' --abbrev-commit --date=relative
+  last-tag = describe --abbrev=0 --tags
 [user]
   name = Krasimir Angelov
   email = krasio@codingspree.net
