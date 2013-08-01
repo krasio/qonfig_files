@@ -2,6 +2,6 @@ alias migrate="rake db:migrate db:test:prepare"
 alias g="git"
 alias be="bundle exec"
 alias brspec="bundle exec rspec"
-alias bcucumber="bundle exec cucumber"
+alias bcucumber="bundle exec cucumber -r features"
 alias la="ls -lah -G"
 alias flog_top='flog app/ lib/ | grep "\#" | head'
