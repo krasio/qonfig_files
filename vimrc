@@ -189,5 +189,17 @@ inoremap <C-k> <%=  -%><Left><Left><Left><Left>
 inoremap <C-j> <%  -%><Left><Left><Left><Left>
 inoremap <C-l> #{}<Left>
 
-" highlight rable files
+" highlight rabl files
 au BufRead,BufNewFile *.rabl set filetype=ruby
+
+" highlight jbuilder files
+au BufRead,BufNewFile *.jbuilder set filetype=ruby
+
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload
+"   them.
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
