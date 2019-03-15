@@ -3,7 +3,6 @@ if defined?(AciveRecord) && defined?(Rails::Console)
 end
 
 require 'rubygems'
-require 'interactive_editor'
 
 # Autocomplete
 require 'irb/completion'
@@ -23,10 +22,6 @@ class Object
     locals.sort
   end
 end
-
-require 'wirble'
-Wirble.init
-Wirble.colorize
 
 # Project-specific .irbrc
 if Dir.pwd != File.expand_path("~")
