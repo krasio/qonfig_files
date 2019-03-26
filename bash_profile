@@ -1,32 +1,36 @@
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion.d/go-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/go-completion.bash
-fi
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if type brew &>/dev/null; then
+  for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*
+  do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
+  then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
 fi
 
 export EDITOR=vim
 export DOTBASHMY=~/.bash.my
 source $DOTBASHMY/aliases
 source $DOTBASHMY/cucumber
-#source $DOTBASHMY/git-nav
 source $DOTBASHMY/git-aware-prompt/colors.sh
 source $DOTBASHMY/git-aware-prompt/prompt.sh
-export PS1="\$(~/.rvm/bin/rvm-prompt v g) \u@\h \w\[$txtcyn\]\$git_branch\[$txtrst\]\$ "
+# export PS1="\$(~/.rvm/bin/rvm-prompt v g) \u@\h \w\[$txtcyn\]\$git_branch\[$txtrst\]\$ "
+export PS1="\u@\h \w\[$txtcyn\]\$git_branch\[$txtrst\]\$ "
 
 export HISTFILESIZE=2000
 export HISTSIZE=2000
 export HISTCONTROL=ignoreboth
 export HISTTIMEFORMAT='%F %T '
 
+source $(brew --prefix asdf)/asdf.sh
+
+# set yarn binaries on path
+# must be below the .asdf source commands ^
+export PATH="$(yarn global bin):$PATH"
+
 # setup direnv
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 export GOPATH=~/projects/go
 export PATH=$PATH:$GOPATH/bin
@@ -44,21 +48,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export ELIXIR_EDITOR="echo __FILE__ +__LINE__"
 
-#[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-#if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-#  export GPG_AGENT_INFO
-#else
-#  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-#fi
-export PATH="/usr/local/opt/mariadb@10.0/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/qrasio/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/qrasio/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/qrasio/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/qrasio/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

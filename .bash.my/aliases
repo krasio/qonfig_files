@@ -1,5 +1,6 @@
 alias migrate="rake db:migrate db:test:prepare"
 alias g="git"
+alias gg="git grep"
 alias be="bundle exec"
 alias brspec="bundle exec rspec"
 alias bcucumber="bundle exec cucumber -r features"
