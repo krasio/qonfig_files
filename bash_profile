@@ -23,7 +23,7 @@ export HISTSIZE=2000
 export HISTCONTROL=ignoreboth
 export HISTTIMEFORMAT='%F %T '
 
-source $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
 
 # set yarn binaries on path
 # must be below the .asdf source commands ^
@@ -50,3 +50,4 @@ export ELIXIR_EDITOR="echo __FILE__ +__LINE__"
 
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"

@@ -1,8 +1,16 @@
 alias migrate="rake db:migrate db:test:prepare"
 alias g="git"
-alias gg="git grep"
+alias gg="git grep --line-number"
 alias be="bundle exec"
-alias brspec="bundle exec rspec"
+alias brspec="bundle exec rspec --format documentation"
 alias bcucumber="bundle exec cucumber -r features"
 alias la="ls -lah -G"
 alias flog_top='flog app/ lib/ | grep "\#" | head'
+
+# GitLab
+alias run-gitlab-runner="cd ~/projects/gitlab/ce && gitlab-runner --log-level debug run --config ~/projects/gitlab/ce/gitlab-runner-config.toml"
+alias cd-gitlab-pages="cd ~/projects/go/src/gitlab.com/gitlab-org/gitlab-pages"
+alias cd-ce="cd ~/projects/gitlab/ce"
+alias cd-ee="cd ~/projects/gitlab/ee"
+alias cd-gitlab-ce="cd ~/projects/gitlab/ce/gitlab"
+alias cd-gitlab-ee="cd ~/projects/gitlab/ee/gitlab"
